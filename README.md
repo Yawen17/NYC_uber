@@ -50,3 +50,5 @@ At each station, shows,
 MTA: How many people using MTA
 Uber: How many people using Uber
 Distance / Uber: Average distance from nearest MTA station to Uber pick-up locations
+
+## Website Visualization
