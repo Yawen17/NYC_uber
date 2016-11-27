@@ -13,18 +13,24 @@ So, here come our data sources:
    
   
 * NYC Fare Card history from April to September 2014 (short for "DB-swipes"): https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn
-  * The number of MetroCard swipes made each week by customers entering each station of the New York City Subway. We assume that all passengers swipe MetroCard once to enter the subway station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot track them based on this data).This database tells us about total number of people departing a specific subway station every week (instead of taking Uber). 
+  * The number of MetroCard swipes made each week by customers entering each station of the New York City Subway. We assume that all passengers swipe MetroCard once to enter the subway station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot track them based on this data).This database tells us about total number of people departing a specific subway station every week (instead of taking Uber). 
   
 
 ## How we merge the data
-### 1. Key of subway station: Map fare card history to subway stations' total counts
+### 1. Key of subway stations
+Map fare card history to subway stations' total counts
+
 One subway station has multiple remote card stations that passangers can swipe their card on.
 Hence the first step is to merge all the affiliated remote stations (DB-swipes) into one subway station they belong to (DB-station).
 
-### 2. Key of date: Merge the weekly data of DB-swipes into monthly data, identical to DB-Uber
+### 2. Key of Geo Locations
+Each subway station has its specific geographic location
 
 
-### Database specification*
+### 3. Key of dates
+Merge the weekly data of DB-swipes into monthly data, identical to the DB-Uber timeline
+
+### Database specification
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
 
