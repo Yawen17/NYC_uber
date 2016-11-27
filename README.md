@@ -6,7 +6,7 @@ Basically, we start with the question, "will New Yorkers still choose Uber even 
 So, here come our data sources:
 
 * NYC Uber Pickups from April to September 2014 (short for "DB-Uber"): https://github.com/fivethirtyeight/uber-tlc-foil-response
-  * Data on Uber pickups by location and time.  
+Data on Uber pickups by location and time.  
   
 * NYC Subway Stations (short for "DB-station"): https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49
   * Locations of the New York City Subway stations 
