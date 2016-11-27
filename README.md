@@ -1,11 +1,16 @@
 # How people make their decisions to take Uber instead of subways in NYC?
 
 ## How we choose the data
-Here are our data sources, one on Uber pickups by location and time, and the other on NYC subway station .
+Here are our data sources:
  - NYC Uber Pickups from April to September 2014: https://github.com/fivethirtyeight/uber-tlc-foil-response
+   - Data on Uber pickups by location and time
  - NYC Subway Stations: https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49
+   - Locations of the New York City Subway stations
+ - NYC Fare Card history from April to September 2014: https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn
+  - The number of MetroCard swipes made each week by customers entering each station of the New York City Subway.
 
 ## How we merge the data
+
 ### Database Specification
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
