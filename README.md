@@ -30,7 +30,7 @@ This can be done by matching each pickup location to all subway stations one at 
 ### 3. Key of dates
 Merge the weekly data of DB-swipes into monthly data, identical to the DB-Uber timeline.
 
-### Database specification
+### 4. Database specification
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
 
