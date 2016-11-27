@@ -5,7 +5,8 @@ Here are our data sources, one on Uber pickups by location and time, and the oth
  - NYC Uber Pickups from April to September 2014: https://github.com/fivethirtyeight/uber-tlc-foil-response
  - NYC Subway Stations: https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49
 
-##Database Specification
+## How we merge the data
+### Database Specification
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
 
