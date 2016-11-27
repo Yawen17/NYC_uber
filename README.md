@@ -1,7 +1,9 @@
 # How people make their decisions to take Uber instead of subways in NYC?
 
 ## How we choose the data
-Here are our data sources:
+Basically, we start with a question, will New Yorkers still choose Uber even if they are rather close (say, reasonably walking distance) from the subway stations? This can be a rather interesting topic as the New York City has the highest density of subway coverage, and may seem unwise to call Uber instead of walking just 200m to take the public transportation. 
+
+Here are the data sources we:
 * NYC Uber Pickups from April to September 2014: https://github.com/fivethirtyeight/uber-tlc-foil-response
   * Data on Uber pickups by location and time
   
@@ -14,7 +16,7 @@ Here are our data sources:
 
 ## How we merge the data
 
-### Database Specification
+### *Database Specification*
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
 
