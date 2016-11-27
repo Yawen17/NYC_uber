@@ -21,11 +21,11 @@ So, here come our data sources:
 Map fare card history to subway stations' total counts
 
 One subway station has multiple remote card stations that passangers can swipe their card on.
-Hence the first step is to merge all the affiliated remote stations (DB-swipes) into one subway station they belong to (DB-station). Each subway station has one specific geographic location.
+Hence the first step is to merge all the affiliated remote stations (DB-swipes) into one subway station they belong to (DB-station). Each subway station has one specific geographic location ploted by Geopy.
 
-### 2. Key of Geo Locations
+### 2. Key of Geo locations
 The most critical step is to assign Uber pickup locations to the neareast surrounding subway station. 
-This can be done by matching each pickup location to all subway stations one at a time. By calculating and comparing all the results, python select the shortest distance between two points and match a subway station. All Uber pickup locations are matched up with their nearest subway station. We then calculate the average distance from nearest MTA station to Uber pick-up locations. Distances are outputs in this regard.
+This can be done by in Geopy, matching each pickup location to all subway stations one at a time. By calculating and comparing all the results, python select the shortest distance between two points and match a subway station. All Uber pickup locations are matched up with their nearest subway station. We then calculate the average distance from nearest MTA station to Uber pick-up locations. Distances are outputs in this regard.
 
 ### 3. Key of dates
 Merge the weekly data of DB-swipes into monthly data, identical to the DB-Uber timeline.
