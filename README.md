@@ -18,7 +18,12 @@ So, here come our data sources:
 
 ## How we merge the data
 
-### *Database Specification*
+### *Data cleaning and merging method*
+1.
+2.
+3.
+4.
+### *Database specification*
 
 COLUMNS: month, station, latitude, longitude, mta, uber, distance
 
