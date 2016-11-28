@@ -55,12 +55,6 @@ Uber: How many people using Uber
 Distance / Uber: Average distance from nearest MTA station to Uber pick-up locations
 
 ## Challenges
-
-### Large Merge of Geographic Location Distances
-
-Unlikely general keys, e.g., string or integer, used during databases merge, geographic coordinates cannot be compared simply by theirs
-equality. The affinity of locations is measured by their distance, aka [Vincenty distance](https://en.wikipedia.org/wiki/Vincenty's_formulae). Fortunately, geopy alreay provides [distance calculation](https://geopy.readthedocs.io/en/1.10.0/#module-geopy.distance).
-
 The biggest challenge we encountered in data merging is assigning the nearest subway station to each pickup location. The calculation takes up all the CPU and we were forced to use clustering so as to shorten the running time. 
 
 Also we find it hard to optimize the data visualization on our website. To intuitively show all the information, namely uber picku amounts, MTA rider amounts and average distance in a single map, we need to utilized several dimensions, and spent a lot of time normalizing the data to optimize the size the color-depth contrast of our visualization.
@@ -68,8 +62,13 @@ Also we find it hard to optimize the data visualization on our website. To intui
 The extension is another challenge. 
 
 ## Website Visualization
+Here is our [website] ().
 
 We also did experiments in Tableau to testify our hypotheis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
+SQL:
+Extensions:
+
 ## Conclusion
 New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
+In contrast, for people living in remote district, the reason that they call Uber is likely the long-waliking distance from the nearest subway station (mostly over 1000m), this is especially the case for airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$). 
