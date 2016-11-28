@@ -73,8 +73,6 @@ $ wc -l uber-raw-data-*.csv
  4534333 total
  ```
 
-The biggest challenge we encountered in data merging is assigning the nearest subway station to each pickup location. The calculation takes up all the CPU and we were forced to use clustering so as to shorten the running time. 
-
 Also we find it hard to optimize the data visualization on our website. To intuitively show all the information, namely uber picku amounts, MTA rider amounts and average distance in a single map, we need to utilized several dimensions, and spent a lot of time normalizing the data to optimize the size the color-depth contrast of our visualization.
 
 The extension is another challenge. 
