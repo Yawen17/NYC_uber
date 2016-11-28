@@ -72,7 +72,7 @@ Extensions:
 
 ## Conclusion
 
-![NYC Uber Pickups, Sep 2014](https://cloud.githubusercontent.com/assets/22580466/20686199/867e2b2a-b56c-11e6-9b9a-c747815a31d9.png)
+![tableau dashboard](https://cloud.githubusercontent.com/assets/22580466/20686199/867e2b2a-b56c-11e6-9b9a-c747815a31d9.png)
 
 New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
 
