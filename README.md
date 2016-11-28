@@ -63,6 +63,8 @@ The extension is another challenge.
 
 ## Website Visualization
 Here is our [website] ().
-We also made experiment on Tableau to show initial results before buiding our structure. The Tableau dashboard is embedded in our website.
+
+We also did experiments in Tableau to testify our hypotheis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
 ## Conclusion
+New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
