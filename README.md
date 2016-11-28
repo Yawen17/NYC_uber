@@ -71,6 +71,8 @@ SQL:
 Extensions:
 
 ## Conclusion
+![alt tag](https://raw.githubusercontent.com/Yawen17/NYC_Uber/master/path/to/Tableau Dashboard.png)
+
 New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
 
 In the contrast, for people living in remote districts, the reason that they call Uber is likely the long-waliking distance from the nearest subway station, this is especially the case for people taking Uber near airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$). 
