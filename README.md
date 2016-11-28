@@ -28,7 +28,7 @@ Hence the first step is to merge all the affiliated remote stations (DB-swipes) 
 
 ### 2. Key of Geo locations
 The most critical step is to assign Uber pickup locations to the neareast surrounding subway station.
-This can be done by Geopy, matching each pickup location to all subway stations one at a time. By calculating and comparing all the results, python select the shortest distance between two points and match a subway station. All Uber pickup locations are matched up with their nearest subway station. We then calculate the average distance from nearest MTA station to Uber pick-up locations. Distances are outputs in this regard.
+This can be done by Geopy, matching each pickup location to all subway stations one at a time. By calculating and comparing all the results, python select the shortest distance between two points and match the nearest subway station. All Uber pickup locations are matched up with their nearest subway stations. We then calculate the average distance from nearest MTA station to Uber pick-up locations. Average Distances are saved as outputs in the mta_uber.csv.
 
 ### 3. Key of dates
 Merge the weekly data of DB-swipes into monthly data, identical to the DB-Uber timeline.
@@ -55,7 +55,14 @@ Uber: How many people using Uber
 Distance / Uber: Average distance from nearest MTA station to Uber pick-up locations
 
 ## Challenges
+The biggest challenge we encountered in data merging is assigning the nearest subway station to each pickup location. The calculation takes up all the CPU and we were forced to use clustering so as to shorten the running time. 
+
+Also we find it hard to optimize the data visualization on our website. To intuitively show all the information, namely uber picku amounts, MTA rider amounts and average distance in a single map, we need to utilized several dimensions, and spent a lot of time normalizing the data to optimize the size the color-depth contrast of our visualization.
+
+The extension is another challenge. 
 
 ## Website Visualization
+Here is our [website] ().
+We also made experiment on Tableau to show initial results before buiding our structure. The Tableau dashboard is embedded in our website.
 
 ## Conclusion
