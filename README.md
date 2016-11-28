@@ -68,7 +68,6 @@ Also we find it hard to optimize the data visualization on our website. To intui
 The extension is another challenge. 
 
 ## Website Visualization
-Here is our [website] ().
 
 We also did experiments in Tableau to testify our hypotheis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
