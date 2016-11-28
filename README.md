@@ -1,7 +1,9 @@
 # New Yorkers, go for Uber or Subway?
 
-# Motivation
+## Motivation
 We already know a few interesting stories about Uber at the New York City: [Uber Is Serving New York’s Outer Boroughs More Than Taxis Are](http://fivethirtyeight.com/features/uber-is-serving-new-yorks-outer-boroughs-more-than-taxis-are/), [Public Transit Should Be Uber’s New Best Friend](http://fivethirtyeight.com/features/public-transit-should-be-ubers-new-best-friend/), [Uber Is Taking Millions Of Manhattan Rides Away From Taxis](http://fivethirtyeight.com/features/uber-is-taking-millions-of-manhattan-rides-away-from-taxis/), and [Is Uber Making NYC Rush-Hour Traffic Worse?](http://fivethirtyeight.com/features/is-uber-making-nyc-rush-hour-traffic-worse/). But can we learn more about Uber users in NYC given that the New York City has the most advanced public transportation system in the United States?
+
+The answer is Yes. By using Uber pickups and MTA stations open data, we are curious to know: _How do people choose a Uber even there is a subway station around them?_
 
 ## How we choose the data
 Basically, we start with the question, "will New Yorkers still choose Uber even if they are rather close (say, reasonably walking distance) from the subway stations?" This can be a rather interesting topic as the New York City has the highest density of subway coverage, and it seems unwise for New Yorkers to call Uber instead of walking just 200m to take the public transportation. 
@@ -57,3 +59,5 @@ Distance / Uber: Average distance from nearest MTA station to Uber pick-up locat
 ## Challenges
 
 ## Website Visualization
+
+## Conclusion
