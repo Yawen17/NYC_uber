@@ -64,7 +64,7 @@ The extension is another challenge.
 ## Website Visualization
 Here is our [website] ().
 
-We also did experiments in Tableau to testify our hypotheis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
+We also did experiments in [Tableau](https://public.tableau.com/views/NYCUber/Dashboard1?:embed=y&:display_count=yes) to testify our hypothesis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
 SQL:
 
