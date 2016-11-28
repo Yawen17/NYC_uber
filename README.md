@@ -55,6 +55,24 @@ Uber: How many people using Uber
 Distance / Uber: Average distance from nearest MTA station to Uber pick-up locations
 
 ## Challenges
+
+### Large Merge of Geographic Location Distances
+
+Unlikely general keys, e.g., string or integer, used during databases merge, geographic coordinates cannot be compared simply by theirs equality. The affinity of locations is measured by their distance, aka [Vincenty distance](https://en.wikipedia.org/wiki/Vincenty's_formulae). Fortunately, geopy alreay provides [distance calculation](https://geopy.readthedocs.io/en/1.10.0/#module-geopy.distance).
+
+As a result, to find out the neareset MTA station for a Uber pickup, we have to calculate every distance from the pickup location to each MTA station and then choose the station with the shortest distance. Therefore, for one single pickup, we have to calcualte vincenty distance between this pickup location and all 250 MTA stations' locations to find the minimum one. As shown below, there are 4534333 pickup locations in total from April to September, 2014 and thus we have 250 * 4,534,333, or 1.13 billion distances to calculate. On a Mac Pro with 2.5 GHz Intel Core i7, it takes one minute to process 10,000 pickups by using one CPU core and thus took 20 hours!!! to process all pickups by 4 CPU cores.
+
+```
+$ wc -l uber-raw-data-*.csv
+  564517 uber-raw-data-apr14.csv
+  829276 uber-raw-data-aug14.csv
+  796122 uber-raw-data-jul14.csv
+  663845 uber-raw-data-jun14.csv
+  652436 uber-raw-data-may14.csv
+ 1028137 uber-raw-data-sep14.csv
+ 4534333 total
+ ```
+
 The biggest challenge we encountered in data merging is assigning the nearest subway station to each pickup location. The calculation takes up all the CPU and we were forced to use clustering so as to shorten the running time. 
 
 Also we find it hard to optimize the data visualization on our website. To intuitively show all the information, namely uber picku amounts, MTA rider amounts and average distance in a single map, we need to utilized several dimensions, and spent a lot of time normalizing the data to optimize the size the color-depth contrast of our visualization.
