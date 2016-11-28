@@ -67,8 +67,10 @@ Here is our [website] ().
 We also did experiments in Tableau to testify our hypotheis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
 SQL:
+
 Extensions:
 
 ## Conclusion
 New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
-In contrast, for people living in remote district, the reason that they call Uber is likely the long-waliking distance from the nearest subway station (mostly over 1000m), this is especially the case for airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$). 
+
+In the contrast, for people living in remote districts, the reason that they call Uber is likely the long-waliking distance from the nearest subway station, this is especially the case for people taking Uber near airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$). 
