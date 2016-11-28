@@ -1,18 +1,21 @@
 # New Yorkers, go for Uber or Subway?
 
+# Motivation
+We already know a few interesting stories about Uber at the New York City: [Uber Is Serving New York’s Outer Boroughs More Than Taxis Are](http://fivethirtyeight.com/features/uber-is-serving-new-yorks-outer-boroughs-more-than-taxis-are/), [Public Transit Should Be Uber’s New Best Friend](http://fivethirtyeight.com/features/public-transit-should-be-ubers-new-best-friend/), [Uber Is Taking Millions Of Manhattan Rides Away From Taxis](http://fivethirtyeight.com/features/uber-is-taking-millions-of-manhattan-rides-away-from-taxis/), and [Is Uber Making NYC Rush-Hour Traffic Worse?](http://fivethirtyeight.com/features/is-uber-making-nyc-rush-hour-traffic-worse/). But can we learn more about Uber users in NYC given that the New York City has the most advanced public transportation system in the United States?
+
 ## How we choose the data
 Basically, we start with the question, "will New Yorkers still choose Uber even if they are rather close (say, reasonably walking distance) from the subway stations?" This can be a rather interesting topic as the New York City has the highest density of subway coverage, and it seems unwise for New Yorkers to call Uber instead of walking just 200m to take the public transportation. 
 
 So, here come our data sources:
 
-* NYC Uber Pickups from April to September 2014 (short for "DB-Uber"): https://github.com/fivethirtyeight/uber-tlc-foil-response
+* [NYC Uber Pickups from April to September 2014 (i.e., DB-Uber)](https://github.com/fivethirtyeight/uber-tlc-foil-response)
   * Data on Uber pickups by location and time
   
-* NYC Subway Stations (short for "DB-station"): https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49
+* [NYC Subway Stations (i.e., DB-station)](https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49)
   * Locations of the New York City Subway stations 
    
   
-* NYC Fare Card history from April to September 2014 (short for "DB-swipes"): https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn
+* [NYC Fare Card history from April to September 2014 (i.e., DB-swipes)](https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn)
   * The number of MetroCard swipes made each week by customers entering each station of the New York City Subway. We assume that all passengers swipe MetroCard once to enter the subway station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot track them based on this data).This database tells us about total number of people departing a specific subway station every week (instead of taking Uber). 
   
 
