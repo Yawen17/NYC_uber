@@ -46,7 +46,7 @@ def index(request, month=4):
     return render(request, 'index.html', contents)
 
 def plot(month=4):
-    plotly.tools.set_credentials_file(username='dun', api_key='ei8wtwn2tf')
+    plotly.tools.set_credentials_file(username='Yawen', api_key='ar6IJE4MI2baADcPw5f2')
 
     mapbox_access_token = \
         'pk.eyJ1IjoiY2hlbHNlYXBsb3RseSIsImEiOiJjaXFqeXVzdDkwMHFrZnRtOGtlMGtwcGs4In0.SLidkdBMEap9POJGIe1eGw'
@@ -195,10 +195,10 @@ class FormClass(FormView):
                                                   'state' : STATES_DICT[state]})
 
 def show_nyc(request, month=4):
-    #url = plot(month)
+    url = plot(month)
 
     contents = {}
     contents['title'] = "NYC Uber Pickups around MTA Stations 2014/%s" % month
-    #contents['map'] = tls.get_embed(url, height=900)
+    contents['map'] = tls.get_embed(url, height=900)
 
     return render(request, 'index.html', contents)
