@@ -11,7 +11,8 @@ The answer is Yes. By using Uber pickups and MTA stations open data, we are curi
 python manage.py runserver
 ```
 then go to [here](http://127.0.0.1:8000/)
-You will need to install [Plotly](https://plot.ly/python/getting-started/) first
+
+You need to install [Plotly](https://plot.ly/python/getting-started/) first
 
 ## How we choose the data
 
