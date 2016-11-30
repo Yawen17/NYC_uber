@@ -21,8 +21,8 @@ from django.http import HttpResponse
 
 def home(request):
     html = \
-"""<h2>Yawen Zhao 454663 Final Project</h2>
-<a href="/nyc/">Uber NYC</a>
+"""<h2>Yawen Zhao 454663 & Liping Jiang 454668: Final Project</h2>
+<a href="/nyc/4/">Uber NYC</a>
 """
     return HttpResponse(html)
 
