@@ -46,7 +46,7 @@ def index(request, month=4):
     return render(request, 'index.html', contents)
 
 def plot(month=4):
-    plotly.tools.set_credentials_file(username='Yawen', api_key='ar6IJE4MI2baADcPw5f2')
+    plotly.tools.set_credentials_file(username='Yawen', api_key='ar6lJE4Ml2baADcPw5f2')
 
     mapbox_access_token = \
         'pk.eyJ1IjoiY2hlbHNlYXBsb3RseSIsImEiOiJjaXFqeXVzdDkwMHFrZnRtOGtlMGtwcGs4In0.SLidkdBMEap9POJGIe1eGw'
