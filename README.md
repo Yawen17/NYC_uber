@@ -6,19 +6,25 @@ We already know a few interesting stories about Uber at the New York City: [Uber
 
 The answer is Yes. By using Uber pickups and MTA stations open data, we are curious to know: _How do people choose a Uber even there is a subway station around them?_ For example, will New Yorkers still choose Uber even if they are reasonably close (i.e., within walking distance) to a subway stations? Since the New York City has the highest density of subway coverage, and it seems unwise for New Yorkers to pick up Uber instead of the cheaper public transportation alternative.
 
+## How to run
+```
+python3 manage.py runserver
+```
+then go to [here](http://http://127.0.0.1:8000/)
+
 ## How we choose the data
 
 Our data sources include:
 
 * [NYC Uber Pickups from April to September 2014 (i.e., DB-Uber)](https://github.com/fivethirtyeight/uber-tlc-foil-response)
   * Data on Uber pickups by location (i.e., geographic coordinates) and time (YY:MM:DD HH:MM)
-  
+
 * [NYC Subway Stations (i.e., DB-station)](https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49)
   * Names and locations (i.e., geographic coordinates) of the New York City Subway stations
 
 * [NYC Fare Card history from April to September 2014 (i.e., DB-swipes)](https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn)
-  * The number of MetroCard swipes made each week by customers entering each station of the New York City Subway. We assume that all passengers swipe MetroCard once to enter the subway station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot track them based on this data).This database tells us about total number of people departing a specific subway station every week (instead of taking Uber). 
-  
+  * The number of MetroCard swipes made each week by customers entering each station of the New York City Subway. We assume that all passengers swipe MetroCard once to enter the subway station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot track them based on this data).This database tells us about total number of people departing a specific subway station every week (instead of taking Uber).
+
 ## How we merge the data
 ### 1. Key of subway stations
 Map fare card history to subway stations' total counts
@@ -43,7 +49,7 @@ Station: Name of the station
 Latitude: Latitude of the station
 Longtitude: Longtitude of the station
 MTA: Total OUT rides from this station
-Uber: Total Uber pickups which nearest to this station 
+Uber: Total Uber pickups which nearest to this station
 Distance: The sum of distances of all Uber pickups from pickup location to the nearest station
 
 
@@ -71,11 +77,11 @@ $ wc -l uber-raw-data-*.csv
   652436 uber-raw-data-may14.csv
  1028137 uber-raw-data-sep14.csv
  4534333 total
- ```
+```
 
 Also we find it hard to optimize the data visualization on our website. To intuitively show all the information, namely uber picku amounts, MTA rider amounts and average distance in a single map, we need to utilized several dimensions, and spent a lot of time normalizing the data to optimize the size the color-depth contrast of our visualization.
 
-The extension is another challenge. 
+The extension is another challenge.
 
 ## Website Visualization
 Here is our [website] ().
@@ -90,6 +96,6 @@ Extensions:
 
 ![tableau dashboard](https://cloud.githubusercontent.com/assets/22580466/20686199/867e2b2a-b56c-11e6-9b9a-c747815a31d9.png)
 
-New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are. 
+New Yorkers are more likely to take Uber in midtown an downtown Manhattan even within walking distance from the subway station (mostly below 300m). The higher the density of passengers in town, the shorter the distances are.
 
-In the contrast, for people living in remote districts, the reason that they call Uber is likely the long-waliking distance from the nearest subway station, this is especially the case for people taking Uber near airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$). 
+In the contrast, for people living in remote districts, the reason that they call Uber is likely the long-waliking distance from the nearest subway station, this is especially the case for people taking Uber near airports; and if people are near enough to those suburban stations, they would in most cases choose subway instead of Uber (probably to save money$).
