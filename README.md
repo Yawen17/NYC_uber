@@ -8,9 +8,9 @@ The answer is Yes. By using Uber pickups and MTA stations open data, we are curi
 
 ## How to run
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
-then go to [here](http://http://127.0.0.1:8000/)
+then go to [here](http://127.0.0.1:8000/)
 
 ## How we choose the data
 
