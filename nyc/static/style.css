@@ -1,0 +1,66 @@
+* {
+  font-family: 'Open Adobe', Adobe Garamond Pro;
+}
+
+body {
+  margin: 0% 10%;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: auto;
+  background-color: #6BCAE2;
+}
+ul.nav li {
+  float: left;
+}
+ul.nav li a {
+  display: inline-block;
+  color: #F5FAFA;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+ul.nav li a.active {
+  color: #FEF9E7;
+  background-color: #C1DAD6;
+  font-weight: bold;
+}
+ul.nav li:hover {
+  background-color: #6D929B;
+  transition: 0.5s;
+}
+img {
+  border: 0px;
+  border-style: solid;
+  border-color: #6BCAE2;
+  margin: 0px 0px;
+}
+figcaption {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+table {
+  align: center;
+  border-width: 5px 0px;
+  border-style: solid;
+  border-color: #6BCAE2;
+  background: #B7AFA3;
+  padding: 0px;
+  border-spacing: 0px;
+}
+th {
+  color: white;
+  background-color: #6BCAE2;
+}
+th, td {
+  text-align: left;
+  padding: 3px 15px;
+}
+h1 {
+  color: #6BCAE2;
+  background: #;
+}
