@@ -19,20 +19,69 @@ from .models import Input, MONTHS, MONTHS_DICT
 
 pd.set_option('display.max_colwidth', -1)
 
-def to_link_name(county_name):
-    name = county_name.lower().replace(' county', '') \
-        .replace(' city', '') \
-        .replace('(', '') \
-        .replace(')', '') \
-        .replace('.', '') \
-        .strip() \
-        .replace(' ', '_')
-    return name
-
-def index(request, month=4):
+def motivation(request):
     contents = {}
-    contents['title'] = "NYC Uber Pickups around MTA Stations April - September 2014"
+    contents['title'] = "Motivation"
+    contents['content'] = \
+"""
+<p>
+We already know a few interesting stories about Uber at the New York City.
+But can we learn more about Uber users in NYC given that the New York City has the most advanced
+public transportation system in the United States?
 
+The answer is Yes. By using Uber pickups and MTA stations open data, we are curious to know: How do
+people choose a Uber even there is a subway station around them? For example, will New Yorkers still
+choose Uber even if they are reasonably close (i.e., within walking distance) to a subway stations?
+Since the New York City has the highest density of subway coverage, and it seems unwise for New
+Yorkers to pick up Uber instead of the cheaper public transportation alternative.
+</p>
+"""
+
+    return render(request, 'index.html', contents)
+
+def more(request):
+    contents = {}
+    contents['title'] = "Resources and Archive"
+    contents['content'] = \
+"""
+<ul>
+<li><p><a href="https://github.com/fivethirtyeight/uber-tlc-foil-response">NYC Uber Pickups from
+April to September 2014 (i.e., DB-Uber)</a></p>
+
+<ul>
+<li>Data on Uber pickups by location (i.e., geographic coordinates) and time (YY:MM:DD
+HH:MM)</li>
+</ul></li>
+<li><p><a href="https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49">NYC
+Subway Stations (i.e., DB-station)</a></p>
+
+<ul>
+<li>Names and locations (i.e., geographic coordinates) of the New York City Subway stations</li>
+</ul></li>
+<li><p><a
+href="https://data.ny.gov/Transportation/Fare-Card-History-for-Metropolitan-Transportation-/v7qc-gwpn">NYC
+Fare Card history from April to September 2014 (i.e., DB-swipes)</a></p>
+
+<ul>
+<li>The number of MetroCard swipes made each week by customers entering each station of the New
+York City Subway. We assume that all passengers swipe MetroCard once to enter the subway
+station, and all of them are out-bounded (as passengers do not swipe card to exit and we cannot
+track them based on this data).This database tells us about total number of people departing a
+specific subway station every week (instead of taking Uber).</li>
+</ul></li>
+</ul>
+
+<p>You can read more about this topic on: <a
+href="http://fivethirtyeight.com/features/uber-is-serving-new-yorks-outer-boroughs-more-than-taxis-are/">Uber
+Is Serving New York’s Outer Boroughs More Than Taxis Are</a>, <a
+href="http://fivethirtyeight.com/features/public-transit-should-be-ubers-new-best-friend/">Public
+Transit Should Be Uber’s New Best Friend</a>, <a
+href="http://fivethirtyeight.com/features/uber-is-taking-millions-of-manhattan-rides-away-from-taxis/">Uber
+Is Taking Millions Of Manhattan Rides Away From Taxis</a>, and <a
+href="http://fivethirtyeight.com/features/is-uber-making-nyc-rush-hour-traffic-worse/">Is Uber
+Making NYC Rush-Hour Traffic Worse?</a>.
+</p>
+"""
     return render(request, 'index.html', contents)
 
 def plot(month=4):

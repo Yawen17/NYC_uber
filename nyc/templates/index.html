@@ -19,6 +19,16 @@
 
 <body>
 
+<nav class="navbar navbar-inverse" id="navbar">
+  <div class="col-md-10 col-md-offset-1">
+    <ul class="nav navbar-nav">
+      <li><a href="../nyc/motivation">Motivation</a></li>
+      <li><a href=".">Map</a></li>
+      <li><a href="../nyc/more">More</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="col-md-10 col-md-offset-1 text-left">
 
 <h1>{{ title | default:"My Django Site" }}</h1>
@@ -37,7 +47,11 @@
 {{ table | safe }}
 
 <div id="content">
-{% block content %}{% endblock %}
+{% block content %}
+
+{{ content | safe }}
+
+{% endblock %}
 </div>
 
 </div>
