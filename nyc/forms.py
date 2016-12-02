@@ -1,14 +1,13 @@
 from django import forms  
-from .models import Input, STATES
+from .models import Input, MONTHS
 
 class InputForm(forms.ModelForm):  
 
     attrs = {'class ' : 'form−control ',
              'onchange ' : 'this.form.submit() '}
 
-    state = forms.ChoiceField(choices=STATES, required=True,
+    month = forms.ChoiceField(choices=MONTHS, required=True,
                               widget=forms.Select(attrs = attrs))
     class Meta:
-
         model = Input
-        fields = ['state']
+        fields = ['month']

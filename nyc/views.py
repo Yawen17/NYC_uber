@@ -15,19 +15,9 @@ from django.db import models
 from matplotlib import pyplot
 
 from .forms import InputForm
-from .models import Input, STATES, STATES_DICT
+from .models import Input, MONTHS, MONTHS_DICT
 
 pd.set_option('display.max_colwidth', -1)
-
-class InputForm(forms.ModelForm):
-    attrs = {'class ' : 'form−control ',
-             'onchange ' : 'this.form.submit() '}
-    state = forms.ChoiceField(choices=STATES, required=True,
-                              widget=forms.Select(attrs = attrs))
-    class Meta:
-
-        model = Input
-        fields = ['state']
 
 def to_link_name(county_name):
     name = county_name.lower().replace(' county', '') \
@@ -134,78 +124,29 @@ def plot(month=4):
     #py.image.save_as(fig, filename='uber.png')
     return url
 
-from django.views.generic import FormView
-class FormClass(FormView):
-    template_name = 'index.html'
-    form_class = InputForm
-
-
-    def get(self, request):
-
-      state = request.GET.get('state', 'PA')
-
-      return render(request, self.template_name, {'form_action' : reverse_lazy('nyc:formclass'),
-                                                  'form_method' : 'get',
-                                                  'form' : InputForm({'state' : state}),
-                                                  'state' : STATES_DICT[state]})
-
-    def post(self, request):
-
-      state = request.POST.get('state', 'PA')
-
-      return render(request, self.template_name, {'form_action' : reverse_lazy('nyc:formclass'),
-                                                  'form_method' : 'get',
-                                                  'form' : InputForm({'state' : state}),
-                                                  'state' : STATES_DICT[state]})
-
-from .forms import InputForm
-from .models import STATES_DICT
-
-def form(request):
-
-    state = request.GET.get('state', '')
-    if not state: state = request.POST.get('state', 'PA')
-
-    params = {'form_action' : reverse_lazy('nyc:form'),
-              'form_method' : 'get',
-              'form' : InputForm({'state' : state}),
-              'state' : STATES_DICT[state]}
-
-    return render(request, 'index.html', params)
-
-
-from django.views.generic import FormView
-class FormClass(FormView):
-    template_name = 'index.html'
-    form_class = InputForm
-
-
-    def get(self, request):
-      state = request.GET.get('state', 'PA')
-      return render(request, self.template_name, {'form_action' : reverse_lazy('nyc:formclass'),
-                                                  'form_method' : 'get',
-                                                  'form' : InputForm({'state' : state}),
-                                                  'state' : STATES_DICT[state]})
-
-    def post(self, request):
-      state = request.POST.get('state', 'PA')
-      return render(request, self.template_name, {'form_action' : reverse_lazy('nyc:formclass'),
-                                                  'form_method' : 'get',
-                                                  'form' : InputForm({'state' : state}),
-                                                  'state' : STATES_DICT[state]})
-
-def show_nyc(request, month=4):
-    #url = plot(month)
+def show_nyc(request):
 
     contents = {}
-    contents['title'] = "NYC Uber Pickups around MTA Stations 2014/%s" % month
-    #contents['map'] = tls.get_embed(url, height=900)
+
+    month = request.GET.get('month', '4')
+    contents['title'] = "NYC Uber Pickups around MTA Stations %s 2014" % MONTHS_DICT[month]
+
+    if not month: month = request.POST.get('month', '4')
+
+    params = {'form_action' : reverse_lazy('nyc:show_nyc'),
+              'form_method' : 'get',
+              'form' : InputForm({'month' : month}),
+              'month' : MONTHS_DICT[month]}
+    contents.update(params)
+
+    url = plot(month)
+    contents['map'] = tls.get_embed(url, height=900)
 
     conn = sqlite3.connect('data.sqlite3')
-    df = pd.read_sql("SELECT month,station,mta,uber,avg_dist FROM mta_uber WHERE month='%s'"
+    df = pd.read_sql("SELECT station,mta,uber,avg_dist FROM mta_uber WHERE month='%s'"
                      " GROUP BY STATION ORDER BY CAST(uber as unsigned) DESC" % month, conn)
     table = df.to_html(float_format = "%.3f", classes = "table table-striped",
-        columns=range(5), col_space=50, justify='left', index_names=False, escape=False)
+        columns=range(4), col_space=50, justify='left', index_names=False, escape=False)
     contents['table'] = table
 
     return render(request, 'index.html', contents)

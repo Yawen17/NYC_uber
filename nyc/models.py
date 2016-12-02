@@ -2,62 +2,17 @@ from django.db import models
 
 # Create your models here.
 
-STATES = (  
-    ('AK', 'Alaska'),
-    ('AL', 'Alabama'),
-    ('AR', 'Arkansas'),
-    ('AZ', 'Arizona'),
-    ('CA', 'California'),
-    ('CO', 'Colorado'),
-    ('CT', 'Connecticut'),
-    ('DE', 'Delaware'),
-    ('FL', 'Florida'),
-    ('GA', 'Georgia'),
-    ('HI', 'Hawaii'),
-    ('IA', 'Iowa'),
-    ('ID', 'Idaho'),
-    ('IL', 'Illinois'),
-    ('IN', 'Indiana'),
-    ('KS', 'Kansas'),
-    ('KY', 'Kentucky'),
-    ('LA', 'Louisiana'),
-    ('MA', 'Massachusetts'),
-    ('MD', 'Maryland'),
-    ('ME', 'Maine'),
-    ('MI', 'Michigan'),
-    ('MN', 'Minnesota'),
-    ('MO', 'Missouri'),
-    ('MS', 'Mississippi'),
-    ('MT', 'Montana'),
-    ('NC', 'North Carolina'),
-    ('ND', 'North Dakota'),
-    ('NE', 'Nebraska'),
-    ('NH', 'New Hampshire'),
-    ('NJ', 'New Jersey'),
-    ('NM', 'New Mexico'),
-    ('NV', 'Nevada'),
-    ('NY', 'New York'),
-    ('OH', 'Ohio'),
-    ('OK', 'Oklahoma'),
-    ('OR', 'Oregon'),
-    ('PA', 'Pennsylvania'),
-    ('RI', 'Rhode Island'),
-    ('SC', 'South Carolina'),
-    ('SD', 'South Dakota'),
-    ('TN', 'Tennessee'),
-    ('TX', 'Texas'),
-    ('UT', 'Utah'),
-    ('VA', 'Virginia'),
-    ('VT', 'Vermont'),
-    ('WA', 'Washington'),
-    ('WI', 'Wisconsin'),
-    ('WV', 'West Virginia'),
-    ('WY', 'Wyoming')
+MONTHS = (  
+    ('4', 'April'),
+    ('5', 'May'),
+    ('6', 'June'),
+    ('7', 'July'),
+    ('8', 'August'),
+    ('9', 'September'),
    )
 
-STATES_DICT = dict(STATES)
+MONTHS_DICT = dict(MONTHS)
 
 class Input(models.Model):
-
-    state = models.CharField(max_length=2, choices=STATES)
+    month = models.CharField(max_length=2, choices=MONTHS)
     name  = models.CharField(max_length=50)
