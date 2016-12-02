@@ -195,10 +195,17 @@ class FormClass(FormView):
                                                   'state' : STATES_DICT[state]})
 
 def show_nyc(request, month=4):
-    url = plot(month)
+    #url = plot(month)
 
     contents = {}
     contents['title'] = "NYC Uber Pickups around MTA Stations 2014/%s" % month
-    contents['map'] = tls.get_embed(url, height=900)
+    #contents['map'] = tls.get_embed(url, height=900)
+
+    conn = sqlite3.connect('data.sqlite3')
+    df = pd.read_sql("SELECT month,station,mta,uber,avg_dist FROM mta_uber WHERE month='%s'"
+                     " GROUP BY STATION ORDER BY CAST(uber as unsigned) DESC" % month, conn)
+    table = df.to_html(float_format = "%.3f", classes = "table table-striped",
+        columns=range(5), col_space=50, justify='left', index_names=False, escape=False)
+    contents['table'] = table
 
     return render(request, 'index.html', contents)
