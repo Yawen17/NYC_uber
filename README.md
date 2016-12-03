@@ -91,9 +91,13 @@ Here is our [website] ().
 We also did experiments in [Tableau](https://public.tableau.com/views/NYCUber/Dashboard1?:embed=y&:display_count=yes) to testify our hypothesis and demostrated initial results before buiding our Django structure. The Tableau dashboard is embedded in our website.
 
 SQL:
+All data are imported to SQL database.
 
 Extensions:
-![Website Screensot](https://cloud.githubusercontent.com/assets/22580466/20856764/803bf8ec-b8cc-11e6-9834-48d7ffca93b5.png)
+we made a drop-down list, where users can select targeted month from April to September, 2014. Both the map and the table below will change accordingly to give further insights. The table are ranked by number of Uber pickups in descending order. 
+
+(Do not forget to roll down the page to take a look in the filtered table!!!)
+![Website Screenshot](https://cloud.githubusercontent.com/assets/22580466/20856764/803bf8ec-b8cc-11e6-9834-48d7ffca93b5.png)
 
 ## Conclusion
 
