@@ -96,7 +96,7 @@ All data are imported to SQL database.
 Extensions:
 we made a drop-down list, where users can select targeted month from April to September, 2014. Both the map and the table below will change accordingly to give further insights. The table are ranked by number of Uber pickups in descending order. 
 
-(Do not forget to roll down the page to take a look in the filtered table!!!)
+(Do not forget to roll down the page to take a look at the filtered table!!!)
 ![Website Screenshot](https://cloud.githubusercontent.com/assets/22580466/20856764/803bf8ec-b8cc-11e6-9834-48d7ffca93b5.png)
 
 ## Conclusion
